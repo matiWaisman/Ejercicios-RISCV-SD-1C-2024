@@ -44,5 +44,4 @@ epilogo:
     ret
 
 .data
-# Pone contiguos en memoria estos cuatro datos
 input: .word 0x00000003
