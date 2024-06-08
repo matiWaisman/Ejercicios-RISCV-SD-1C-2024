@@ -27,7 +27,6 @@ copiar:
     
          
 .data
-# Pone contiguos en memoria estos cuatro datos
 s: .word 1, 1, 1, 1, 1, 1, 1, 1
 q: .word 3, 1, 4, 1, 5, 9, 2, 6
 long: .word 0x000000008
