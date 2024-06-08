@@ -25,9 +25,9 @@ main:
             # A A0 lo dejo siempre en la posicion inicial del array
             slli t1, t1, 2 #Multiplico por 4 la posicion que representa el mid y esa ya va a ser la posicion del array que quiero
             add t2, t1, a3
-            sw t3, 0(t2) # t3 tiene el valor de la posicion mid del array
+            lw t3, 0(t2) # t3 tiene el valor de la posicion mid del array
             srli t1, t1, 2 # Divido por 4 la posicion porque antes la habia multiplicado para usar en el array
-            beq t2, a0, encontre
+            beq t3, a0, encontre
             bgt a0, t3, avanzar # arr[mid] < target
             
             # arr[mid] > target
@@ -45,10 +45,11 @@ main:
                 ret
             encontre:
                 add a0, t1, zero # Guardo en a0 la respuesta
+                addi a0, a0, 1
                 ret
     
          
 .data
 array: .word 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 
-target: .word 1 
+target: .word 17 
 n: .word 10
