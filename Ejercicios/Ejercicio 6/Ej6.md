@@ -1,0 +1,7 @@
+C) Como uso tanto a0 como el registro de parámetro para la función factorial, como la de multiplicar y para ambos también los uso de valores hay que tener cuidado con los efectos secundarios en otras partes del programa que se ejecuten durante porque pueden sobreescribir a0 y arruinar el resultado de factorial o multiplicar. A su vez hay que ocuparse de mantenerlo justamente por eso, porque si no lo mantenemos vamos a perder el valor de a0 como parámetro de factorial o como parámetro de multiplicar o el resultado de multiplicar y no obtendríamos el resultado esperado. 
+
+Al factorial crecer muy rápido no podemos expresar factoriales mas grandes a 12! en 32 bits. Por lo que en ese caso ya habría que empezar a guardar la información del resultado en memoria y no en un registro. 
+
+D) Asumiendo que el programa ocupa X bytes necesitamos por cada llamado de factorial 8 bytes para almacenar el return adress y el parámetro de entrada original. Así que cuando estemos por calcular el factorial de 0 vamos a tener guardados en memoria 24 bytes. Entonces necesitaríamos X + 24 bytes.
+
+E) Si la implementación fuera iterativa nos ahorraríamos el uso de memoria pero necesitaría usar un registro mas para contar por cual iteración voy. 
