@@ -1,4 +1,4 @@
-1) La ALU en el Datapath va a estar conectada al Register File para realizar las operaciones 1,2 y 4. Como operandos fuente va a recibir un dato de RD1.
+La ALU en el Datapath va a estar conectada al Register File para realizar las operaciones 1,2 y 4. Como operandos fuente va a recibir un dato de RD1.
 
 Como también se realizan operaciones con el inmediato la Alu va a tener que recibir un dato de un multiplexor que hace que el dato: O venga de RD2 ya en 32 bits o venga con un inmediato con su signo extendido. Como salida de la Alu va a estar conectado al Data Memory y a su vez a un multiplexor que indica si vamos a escribir un dato levantándolo de la memoria principal (de Data Memory) o levantándolo de la operación que hicimos en la Alu (como en este caso) y ese multiplexor va a ir al WD3 del register file. 
 
