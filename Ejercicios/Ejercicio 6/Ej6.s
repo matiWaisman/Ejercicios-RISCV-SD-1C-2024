@@ -43,4 +43,4 @@ factorial:
         
 
 .data
-n0: .word 4
+n0: .word 30
