@@ -19,7 +19,7 @@ medir:
     li a0, 0
     while:
         beq t0, zero, decidir
-        lh t2, 0(a1) # Cargo en t2 la medicion actual, al ser una HW al cargarla en 32 bits no se le va a extender el signo asi que va a ser siempre positiva.
+        lhu t2, 0(a1) # Como no extiende signo va a quedar siempre positivo. Si no pudiera usar lhu hago un XOR con 0xFFFF
         addi t0, t0, -1
         addi, a1, a1, 2
         blt t2, a2, while
@@ -35,7 +35,7 @@ medir:
             ret
 
 .data:
-mediciones: .half 0x1100 0x00F0 0xA200 0x1000 0x00F0
-largo: .byte 5
+mediciones: .half 0xA200 0x00F0 0xA200 0xA200 0x1000
+largo: .byte 4
     
     
