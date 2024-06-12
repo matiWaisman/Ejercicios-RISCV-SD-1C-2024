@@ -1,7 +1,9 @@
 .text:
 main:
-    lw a0, largo
+    lb a0, largo
     la a1, mediciones
+    li a2, 0x0F00
+    
     
     jal ra medir
     
@@ -15,13 +17,12 @@ medir:
     add t0, a0, zero # Uso t0 como iterador
     add t1, a0, zero # Guardo en t1 el largo original
     li a0, 0
-    li t2, 0x0F00
     while:
         beq t0, zero, decidir
-        lh t3, 0(a1) # Cargo en t3 la medicion actual, al ser una HW al cargarla en 32 bits no se le va a extender el signo asi que va a ser siempre positiva.
+        lh t2, 0(a1) # Cargo en t2 la medicion actual, al ser una HW al cargarla en 32 bits no se le va a extender el signo asi que va a ser siempre positiva.
         addi t0, t0, -1
         addi, a1, a1, 2
-        blt t3, t2, while
+        blt t2, a2, while
         addi a0, a0, 1
         j while
     decidir:
